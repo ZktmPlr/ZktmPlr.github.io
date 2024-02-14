@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    overflow:hidden;
+  background-color: #eff3ff;
+  
+  gap:50px;
+  font-family: Oswald;
+  
+  height: 100vh;
+  margin: 0;
+}
+body.normal{
+    background:linear-gradient(rgb(200,200,200),rgb(240,240,240));
+}
+body.fighting{
+    background:linear-gradient(rgb(255, 0, 0),rgrgb(100, 11, 11));
+}
+body.water{
+    background:linear-gradient(rgb(34, 63, 226),rgb(0, 132, 255));
+}
+body.fire{
+    background:linear-gradient(rgb(241, 145, 0),rgb(255, 72, 0))
+}
+body.flying{
+    background:linear-gradient(rgb(98, 0, 255),rgb(132, 0, 255));
+
+}
+body.grass{
+    background:linear-gradient(rgb(34, 226, 43),rgb(36, 128, 0));
+}
+body.poison{
+    background:linear-gradient(rgb(48, 0, 77),rgb(71, 0, 138));
+}
+body.electric{
+    background:linear-gradient(rgb(229, 255, 0),rgb(187, 255, 0));
+}
+body.ground{
+    background:linear-gradient(rgb(255, 208, 0),rgb(243, 221, 21));
+}
+body.psychic{
+    background:linear-gradient(rgb(255, 0, 234),rgb(174, 0, 255));
+}
+body.rock{
+    background:linear-gradient(rgb(132, 134, 117),rgb(87, 94, 70));
+ }
+ body.ice{
+    background:linear-gradient(rgb(162, 230, 241),rgb(74, 126, 129));
+}
+body.bug{
+    background:linear-gradient(rgb(65, 158, 93),rgb(43, 131, 101));
+}
+body.dragon{
+    background:linear-gradient(rgb(155, 107, 245),rgb(177, 48, 166));
+}
+body.ghost{
+    background:linear-gradient(rgb(61, 61, 61),rgb(92, 92, 92));
+
+}
+body.dark{
+    background:linear-gradient(rgb(44, 44, 44),rgb(0, 0, 0));
+
+}
+body.steel{
+    background:linear-gradient(rgb(82, 85, 60),rgb(40, 41, 38));
+
+}
+body.fairy{
+    background:linear-gradient(rgb(255, 0, 149),rgb(228, 102, 180));
+
+}
+body.stellar{
+    background:linear-gradient(rgb(76, 111, 163),rgb(37, 122, 179));
+
+}
+#container {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    justify-content:center;
+    flex-direction:column;
+  width:95dvw;
+  height:100dvh;
+  margin-top: 20px;
+}
+
+#card {
+  display:flex;
+  flex-direction:Column;
+  align-items: center;
+  justify-content:center;
+  
+  flex-wrap:wrap;
+  width: 35%;
+  height:20%;
+  padding: 30px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background:rgb(250, 250, 250);
+}
+
+#card img {
+    display:flex;
+  flex-direction:Column;
+  align-items: center;
+  justify-content:center;
+  flex-wrap:wrap;
+  display: block;
+  
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+  
+}
+
+.poke-info {
+  text-align: center;
+  background:rgb(250, 250, 250);
+}
+
+.poke-name,
+.ability,
+.type {
+  font-weight: 600;
+}
+
+.hp {
+  width: 80px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+}
+
+.hp span,
+.types span {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stats p {
+  color: #404060;
+}
+
+#btn {
+  display: block;
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+  margin: 30px auto;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Dodatkowe style dla nowych elementów */
+.search {
+            text-align: center;
+            color: #464691;
+            background: rgb(238, 227, 227);
+            font-size: 25px;
+            width: 300px;
+            height: 60px;
+            border: 0px;
+            border-radius: 30px;
+        }
+
+        #submitBtn {
+            background: rgb(255, 255, 255);
+            border: 0px;
+            border-radius: 20px;
+            height: 35px;
+            width: 200px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #submitBtn:hover {
+            background: rgb(245, 245, 245);
+        }
+
+        #recommendations {
+            position:absolute;
+            right:0;
+            height:100%;
+            width: 300px;
+            background: #2e2e2e;
+            color:white;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            
+        }
+
+        #recommendations div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #recommendations div:hover {
+            background: #f0f0f0;
+        }
+        #h{
+            color:black;
+        }
+        #h:hover{
+            color:black;
+        }
+        #baner_container{
+            display:flex;
+            flex-direction:row;
+        }
+        #baner{
+            background:#2e2e2e;
+            width:5dvw;
+            height:100dvh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:1%;
+            flex-direction:column;
+            border:1px solid black;
+
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="baner">
+        <svg fill="#000000" width="64px" height="64px" viewBox="0 0 32.00 32.00" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>discord</title> <path d="M20.992 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.050 0.005 0.109 0.005 0.168 0 1.523-1.191 2.768-2.693 2.854l-0.008 0zM11.026 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.048 0.005 0.104 0.005 0.161 0 1.525-1.19 2.771-2.692 2.862l-0.008 0zM26.393 6.465c-1.763-0.832-3.811-1.49-5.955-1.871l-0.149-0.022c-0.005-0.001-0.011-0.002-0.017-0.002-0.035 0-0.065 0.019-0.081 0.047l-0 0c-0.234 0.411-0.488 0.924-0.717 1.45l-0.043 0.111c-1.030-0.165-2.218-0.259-3.428-0.259s-2.398 0.094-3.557 0.275l0.129-0.017c-0.27-0.63-0.528-1.142-0.813-1.638l0.041 0.077c-0.017-0.029-0.048-0.047-0.083-0.047-0.005 0-0.011 0-0.016 0.001l0.001-0c-2.293 0.403-4.342 1.060-6.256 1.957l0.151-0.064c-0.017 0.007-0.031 0.019-0.040 0.034l-0 0c-2.854 4.041-4.562 9.069-4.562 14.496 0 0.907 0.048 1.802 0.141 2.684l-0.009-0.11c0.003 0.029 0.018 0.053 0.039 0.070l0 0c2.14 1.601 4.628 2.891 7.313 3.738l0.176 0.048c0.008 0.003 0.018 0.004 0.028 0.004 0.032 0 0.060-0.015 0.077-0.038l0-0c0.535-0.72 1.044-1.536 1.485-2.392l0.047-0.1c0.006-0.012 0.010-0.027 0.010-0.043 0-0.041-0.026-0.075-0.062-0.089l-0.001-0c-0.912-0.352-1.683-0.727-2.417-1.157l0.077 0.042c-0.029-0.017-0.048-0.048-0.048-0.083 0-0.031 0.015-0.059 0.038-0.076l0-0c0.157-0.118 0.315-0.24 0.465-0.364 0.016-0.013 0.037-0.021 0.059-0.021 0.014 0 0.027 0.003 0.038 0.008l-0.001-0c2.208 1.061 4.8 1.681 7.536 1.681s5.329-0.62 7.643-1.727l-0.107 0.046c0.012-0.006 0.025-0.009 0.040-0.009 0.022 0 0.043 0.008 0.059 0.021l-0-0c0.15 0.124 0.307 0.248 0.466 0.365 0.023 0.018 0.038 0.046 0.038 0.077 0 0.035-0.019 0.065-0.046 0.082l-0 0c-0.661 0.395-1.432 0.769-2.235 1.078l-0.105 0.036c-0.036 0.014-0.062 0.049-0.062 0.089 0 0.016 0.004 0.031 0.011 0.044l-0-0.001c0.501 0.96 1.009 1.775 1.571 2.548l-0.040-0.057c0.017 0.024 0.046 0.040 0.077 0.040 0.010 0 0.020-0.002 0.029-0.004l-0.001 0c2.865-0.892 5.358-2.182 7.566-3.832l-0.065 0.047c0.022-0.016 0.036-0.041 0.039-0.069l0-0c0.087-0.784 0.136-1.694 0.136-2.615 0-5.415-1.712-10.43-4.623-14.534l0.052 0.078c-0.008-0.016-0.022-0.029-0.038-0.036l-0-0z"></path> </g></svg>
+        <svg fill="#000000" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>youtube</title> <path d="M12.932 20.459v-8.917l7.839 4.459zM30.368 8.735c-0.354-1.301-1.354-2.307-2.625-2.663l-0.027-0.006c-3.193-0.406-6.886-0.638-10.634-0.638-0.381 0-0.761 0.002-1.14 0.007l0.058-0.001c-0.322-0.004-0.701-0.007-1.082-0.007-3.748 0-7.443 0.232-11.070 0.681l0.434-0.044c-1.297 0.363-2.297 1.368-2.644 2.643l-0.006 0.026c-0.4 2.109-0.628 4.536-0.628 7.016 0 0.088 0 0.176 0.001 0.263l-0-0.014c-0 0.074-0.001 0.162-0.001 0.25 0 2.48 0.229 4.906 0.666 7.259l-0.038-0.244c0.354 1.301 1.354 2.307 2.625 2.663l0.027 0.006c3.193 0.406 6.886 0.638 10.634 0.638 0.38 0 0.76-0.002 1.14-0.007l-0.058 0.001c0.322 0.004 0.702 0.007 1.082 0.007 3.749 0 7.443-0.232 11.070-0.681l-0.434 0.044c1.298-0.362 2.298-1.368 2.646-2.643l0.006-0.026c0.399-2.109 0.627-4.536 0.627-7.015 0-0.088-0-0.176-0.001-0.263l0 0.013c0-0.074 0.001-0.162 0.001-0.25 0-2.48-0.229-4.906-0.666-7.259l0.038 0.244z"></path> </g></svg>
+        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 3.79086 3.79086 2 6 2H18C20.2091 2 22 3.79086 22 6V18C22 20.2091 20.2091 22 18 22H6C3.79086 22 2 20.2091 2 18V6ZM6 4C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12ZM17.5 8C18.3284 8 19 7.32843 19 6.5C19 5.67157 18.3284 5 17.5 5C16.6716 5 16 5.67157 16 6.5C16 7.32843 16.6716 8 17.5 8Z" fill="#000000"></path> </g></svg>    </div>
+    <div id="container" class="container">
+        <div id="card">
+            <img id="pokemonImage" class="kus" src="" alt="Pokemon Image">
+            <div class="poke-info">
+                <p class="poke-name"></p>
+                <p class="ability"></p>
+                <p class="type"></p>
+            </div>
+        </div>
+    
+
+    <input class="search" placeholder="Enter Pokemon name">
+    
+
+    <a id="h" target="_blank" href="https://pokemondb.net/pokedex/national">All pokemons</a>
+    <input type="submit" id="submitBtn" value="Submit">
+</div>
+<div id="recommendations"></div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    let submitBtn = document.getElementById("submitBtn");
+    
+    let card = document.getElementById("card");
+    card.style.display = "none";
+
+    submitBtn.addEventListener("click", async (event) => {
+        document.getElementById("recommendations").style.display="none";
+        card.style.display = "flex";
+        event.preventDefault();
+        await pokemons(); // Change here to make sure pokemons() is called after its definition
+    });
+
+    const searchInput = document.querySelector(".search");
+    searchInput.addEventListener("input", displayRecommendations);
+
+    async function displayRecommendations() {
+        const searchValue = searchInput.value.toLowerCase();
+        const allPokemon = await fetchAllPokemon();
+        const filteredPokemon = filterPokemon(allPokemon, searchValue);
+        showRecommendations(filteredPokemon);
+    }
+
+    async function fetchAllPokemon() {
+        try {
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000");
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data.results.map(pokemon => pokemon.name);
+        } catch (error) {
+            console.error("Error fetching data:", error.message);
+            return [];
+        }
+    }
+
+    function filterPokemon(allPokemon, searchValue) {
+        const filteredPokemon = [];
+        for (const pokemon of allPokemon) {
+            if (pokemon.includes(searchValue)) {
+                filteredPokemon.push(pokemon);
+            }
+        }
+        return filteredPokemon;
+    }
+
+    function showRecommendations(recommendations) {
+        const recommendationsContainer = document.getElementById("recommendations");
+        recommendationsContainer.innerHTML = "";
+        for (const recommendation of recommendations) {
+            const recommendationDiv = document.createElement("div");
+            recommendationDiv.textContent = recommendation;
+            recommendationDiv.addEventListener("click", () => {
+                searchInput.value = recommendation;
+                displayRecommendations();
+            });
+            recommendationsContainer.appendChild(recommendationDiv);
+        }
+        recommendationsContainer.style.display = recommendations.length ? "block" : "none";
+    }
+
+    async function pokemons() { // Define pokemons() function here
+        let search_engine = document.querySelector(".search");
+        let search = search_engine.value.toLowerCase();
+        let base_url = "https://pokeapi.co/api/v2/";
+
+        try {
+            let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            let fetched = await response.json();
+            let container = document.getElementById("container");
+            const imageresponse = new Image(400, 400);
+            imageresponse.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${fetched.id}.png`;
+            imageresponse.classList.add("kus");
+
+            let card = document.getElementById("card");
+            let pokemonImage = document.getElementById("pokemonImage");
+            let pokeName = document.querySelector(".poke-name");
+            let ability = document.querySelector(".ability");
+            let type = document.querySelector(".type");
+
+            // Ustawienie treści i obrazka
+            container.classList.add("container1");
+            let typeColor = `${fetched.types[0].type.name}`;
+            document.body.className = typeColor;
+            pokeName.textContent = `Pokemon: ${fetched.name}`;
+            ability.textContent = `Ability: ${fetched.abilities[0].ability.name}`;
+            type.textContent = `Type: ${fetched.types[0].type.name}`;
+            pokemonImage.src = imageresponse.src;
+
+        } catch (error) {
+            console.error("Error fetching data:", error.message);
+        }
+    }
+});
+    </script>
+</body>
+</html>
