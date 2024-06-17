@@ -1,0 +1,153 @@
+body {
+    background: rgb(34, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+img {
+    width: 100%;
+    height:100%;
+    
+    object-fit: contain;
+  }
+#block{
+    background: rgb(17, 17, 17);
+    border-radius:50px;
+    margin:0;
+    border:0;
+    color: white;
+}
+#block:hover {
+    background: rgb(44, 44, 44);
+    border: 0;
+}
+
+#bigfont {
+    font-size: 5vh;
+    width: 70%;
+    height: 20vh;
+    margin: 3vh;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(119, 119, 119);
+}
+stan{
+    display:flex;
+    flex-direction:row;
+    height:100%;
+    width:100%;
+}
+
+#container {
+    
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#img{
+    
+    height:100%;
+    width:50%;
+    object-fit:contain;
+    
+}
+#rpsImg{
+    
+    height:100%;
+    width:50%;
+    object-fit:contain;
+    
+    
+}
+
+#Ctitle,#Cdescription,#Clanguage,#Cdate,#Ptitle,#Pdescription,#Planguage,#Pdate,#rpsTitle,#rpsDescription,#rpsLanguage,#rpsDate,#title,#description,#language,#date{
+    display:flex;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2vh;
+    width:80%;
+    height:20%;
+    margin:0.4vh;
+    
+}
+#Cimg,#Pimg{
+    
+    height:100%;
+    width:50%;
+    object-fit:contain;
+    
+    
+}
+
+#cont{
+    display:flex;
+    
+    flex-direction:column;
+}
+#name{
+    font-size:30px;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    object-fit:contain;
+}
+
+a{
+    height:75%;
+    width:250px;
+    border-radius:50px;
+    background:rgb(76, 198, 39);
+    text-decoration: none;color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#link,#link1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5vh;
+    text-align:center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#buttons{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+gap:0.4vh;
+    height:50%;
+    width:100%;
+}
+
+plan{
+    display:flex;
+    
+    
+    flex-direction:column;
+    gap:0.5vh;
+    height:100%;
+    width:100%;
+  background:none;
+}
+
+
+#block {
+    display:flex;
+    
+    flex-direction:row;
+    gap:5px;
+    height:20vh;
+    width: 100%;
+    margin: 0.5vh;
+}

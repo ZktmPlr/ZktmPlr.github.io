@@ -1,0 +1,34 @@
+{"Projects":{
+    "dachshund":{
+        "date":"april 2024",
+        "language":"HTML/CSS/JS",
+        "img":"dachshund1.png",
+        "title":"dachshund",
+        "description":"Dachshund Clicker I created"
+    },
+    "rps":{
+        "date":"april 2024",
+        "language":"HTML/CSS/JS",
+        "img":"rock.svg",
+        "title":"Rock, Paper, Scissors",
+        "description":"playing rock paper scissors with bot"
+    },
+    "Cards":{
+        "date":"May 2024",
+        "language":"Python",
+        "img":"Cards.svg",
+        "title":"Black Jack",
+        "description":"Blackjack project first python program"
+    },
+    "Pokemon":{
+        "date":"Febuary 2024",
+        "language":"HTML/CSS/JS",
+        "img":"pokeball.svg",
+        "title":"Pokemon finder",
+        "description":"Any pokemon u want is there"
+    }
+}
+
+
+
+}
